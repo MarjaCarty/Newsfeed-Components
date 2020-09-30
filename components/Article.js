@@ -39,7 +39,7 @@ const articleMaker = (article) => {
   const button = document.createElement("button");
 
   articleTitle.textContent = article.title;
-  articleDate.textContant = article.date;
+  articleDate.textContent = article.date;
   first.textContent = article.firstParagraph;
   second.textContent = article.secondParagraph;
   third.textContent = article.thirdParagraph;
@@ -55,6 +55,10 @@ const articleMaker = (article) => {
   articleContainer.classList.add("article");
   articleDate.classList.add("date");
   button.classList.add("expandButton");
+
+  button.addEventListener("click", (e) => {
+    articleContainer.classList.toggle("article-open");
+  });
 
   return articleContainer;
 };
