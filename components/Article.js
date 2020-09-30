@@ -38,12 +38,25 @@ const articleMaker = (article) => {
   const third = document.createElement("p");
   const button = document.createElement("button");
 
+  articleTitle.textContent = article.title;
+  articleDate.textContant = article.date;
+  first.textContent = article.firstParagraph;
+  second.textContent = article.secondParagraph;
+  third.textContent = article.thirdParagraph;
+  button.textContent = "+";
+
   articleContainer.appendChild(articleTitle);
   articleContainer.appendChild(articleDate);
   articleContainer.appendChild(first);
   articleContainer.appendChild(second);
   articleContainer.appendChild(third);
   articleContainer.appendChild(button);
+
+  articleContainer.classList.add("article");
+  articleDate.classList.add("date");
+  button.classList.add("expandButton");
+
+  return articleContainer;
 };
 
 data.forEach((art) => {
