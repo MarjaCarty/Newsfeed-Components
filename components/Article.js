@@ -28,3 +28,25 @@ import data from "../data/data";
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const articleMaker = (article) => {
+  const articleContainer = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
+  const first = document.createElement("p");
+  const second = document.createElement("p");
+  const third = document.createElement("p");
+  const button = document.createElement("button");
+
+  articleContainer.appendChild(articleTitle);
+  articleContainer.appendChild(articleDate);
+  articleContainer.appendChild(first);
+  articleContainer.appendChild(second);
+  articleContainer.appendChild(third);
+  articleContainer.appendChild(button);
+};
+
+data.forEach((art) => {
+  let nextArticle = articleMaker(art);
+  document.body.appendChild(nextArticle);
+});
