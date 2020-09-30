@@ -54,4 +54,5 @@ const menuMaker = (menuArray) => {
   return menuDiv;
 };
 
-menuMaker(menuItems);
+let menu = menuMaker(menuItems);
+document.querySelector(".header").appendChild(menu);
